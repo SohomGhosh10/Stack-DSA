@@ -7,22 +7,22 @@ struct stack{
     int* arr;
 };
 
-int isEmpty(struct stack* ptr){
+int isEmpty(struct stack* ptr){ // checking empty or not
     if(ptr->top == -1){
-        return 1;
+        return 1; // true
     }
     else{
-        return 0;
+        return 0; // false
     }
 }
 
-int isFull(struct stack* ptr){
+int isFull(struct stack* ptr){ // checking full or not
     if(ptr->top == ptr->size-1){
-        return 1;
+        return 1; // true
     }
     else{
-        return 0;
-    }
+        return 0; // false
+    } 
 }
 
 int main(){
