@@ -55,8 +55,8 @@ int main(){
     push(s , 56);
     push(s , 56);
     push(s , 56);
-    push(s , 56);
-    push(s , 57);
+    push(s , 56); // Stack is full
+    push(s , 57); // Stack overflow as size was 10
 
     printf("After pushing empty: %d\n",isEmpty(s));
     printf("After pushing full:%d\n",isFull(s));
