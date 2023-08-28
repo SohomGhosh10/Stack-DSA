@@ -28,6 +28,7 @@ int isEmpty(struct stack * ptr){
 void push(struct stack * ptr , int val){
     if (isFull(ptr)){
         printf("Stack overflow\n");
+        printf("Cannot insert %d to the stack" ,val);
     }
     else{
         ptr->top++;
