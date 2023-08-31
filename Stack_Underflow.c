@@ -27,12 +27,12 @@ int isEmpty(struct stack * ptr){
 
 void push(struct stack * ptr , int val){
     if (isFull(ptr)){
-        printf("Stack overflow\n");
+        printf("Stack overflow\n");  // checks for overflow
         printf("Cannot insert %d to the stack" ,val);
     }
     else{
-        ptr->top++;
-        ptr->arr[ptr->top] = val;
+        ptr->top++; // top incremented
+        ptr->arr[ptr->top] = val; // manually pushed
     }
 }
 
