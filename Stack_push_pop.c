@@ -7,7 +7,7 @@ struct stack{
     int* arr;
 };
 
-int isEmpty(struct stack* ptr){
+int isEmpty(struct stack* ptr){ // Cheching for empty stack
     if(ptr->top == -1){
         return 1;
     }else{
@@ -15,7 +15,7 @@ int isEmpty(struct stack* ptr){
     }
 }
 
-int isFull(struct stack* ptr){
+int isFull(struct stack* ptr){ // checking for full stack
     if(ptr->top == ptr->size - 1){
         return 1;
     }else{
@@ -23,45 +23,44 @@ int isFull(struct stack* ptr){
     }
 }
 
-void push(struct stack* ptr , int value){
+void push(struct stack* ptr , int value){ // pushing element in stack
     if(isFull(ptr)){
-        printf("Stack overflow\n");
+        printf("Stack overflow\n"); // stack overflow
         return;
     }else{
         printf("%d element to be pushed is\n",value);
-        ptr->top++;
-        ptr->arr[ptr->top] = value;
+        ptr->top++; // increamenting top value
+        ptr->arr[ptr->top] = value; // pushing elements
     }
 }
 
-void pop(struct stack * ptr, int value){
-    if(isEmpty(ptr)){
-        printf("Stack underflow\n");
+void pop(struct stack * ptr, int value){ // popping elements from stack
+    if(isEmpty(ptr)){ 
+        printf("Stack underflow\n"); // stack underflow
         return;
     }else{
         printf("%d element to be poped out is\n",value);
-        ptr->top--;
-        value = ptr->arr[ptr->top];
+        ptr->top--; // decreamenting top value 
+        value = ptr->arr[ptr->top]; // popping elements
     }
 }
 
-void display(struct stack * ptr){
+void display(struct stack * ptr){ // displaying current stack
     printf("The current stack is\n");
     if(isEmpty(ptr)){
         printf("Stack is empty\n");
     }
-         for(int i = 0; i <= ptr -> top; i++){
+    for(int i = 0; i <= ptr -> top; i++){
         printf("Element: %d\n", ptr -> arr[i]);
     }
-    
 }
 
 int main()
 {
-    struct stack* sp = (struct Stack*)malloc(sizeof(struct stack));
-    sp -> size = 6;
-    sp -> top = -1;
-    sp -> arr = (int*)malloc(sp -> size * sizeof(int));
+    struct stack* sp = (struct Stack*)malloc(sizeof(struct stack)); // structure pointer
+    sp -> size = 6; // size declaration
+    sp -> top = -1; // top value
+    sp -> arr = (int*)malloc(sp -> size * sizeof(int)); 
 
     // Stack operations
 
@@ -75,7 +74,7 @@ int main()
     push(sp, 17);
     pop(sp,32);
     pop(sp,17);
-    display(sp);
+    display(sp); 
     return 0;
 }
 
