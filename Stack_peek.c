@@ -45,11 +45,11 @@ int pop(struct stack* ptr){
 
 int peek(struct stack* sp, int i){
     int Index = sp->top - i + 1;
-    if(Index < 0){
+    if(Index < 0){ // invalid
         printf("Invalid index\n");
         return -1;
     }else{
-        return sp->arr[Index];
+        return sp->arr[Index]; // returns index of elements
     }
 }
 
@@ -59,9 +59,12 @@ int main(){
     sp->top = -1;
     sp->arr = (int*)malloc(sp->size * sizeof(int));
 
+    //Before pushing and poping
     printf("Before pushing, Full is %d\n",isFull(sp));
     printf("Before poping, Empty is %d\n",isEmpty(sp));
 
+    //Pushing elements
+    
     push(sp,1);
     push(sp,23);
     push(sp,99);
@@ -76,10 +79,12 @@ int main(){
     printf("After pushing, Full is %d\n",isFull(sp));
     printf("After poping, Empty is %d\n",isEmpty(sp));
 
-    printf("Popped %d from the stack\n",pop(sp));
-    printf("Popped %d from the stack\n",pop(sp));
-    printf("Popped %d from the stack\n",pop(sp));
+    printf("Popped %d from the stack\n",pop(sp)); // Last in first out
+    printf("Popped %d from the stack\n",pop(sp)); // Last in first out
+    printf("Popped %d from the stack\n",pop(sp)); // Last in first out
 
+    // Printing the values from the stack
+    
     for(int j = 1; j <= sp->top + 1; j++){
         printf("The value at index %d is %d\n",j ,peek(sp,j));
     }
