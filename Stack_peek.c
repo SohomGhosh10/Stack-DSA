@@ -7,19 +7,19 @@ struct stack{
     int* arr;
 };
 
-int isEmpty(struct stack* ptr){
+int isEmpty(struct stack* ptr){ // for empty
     if(ptr->top == -1){
-        return 1;
+        return 1; // true
     }else{
-        return 0;
+        return 0; // false
     }
 }
 
-int isFull(struct stack* ptr){
-    if(ptr->top == ptr->size-1){
-        return 1;
+int isFull(struct stack* ptr){ // for full
+    if(ptr->top == ptr->size-1){ 
+       return 1; // true
     }else{
-        return 0;
+        return 0; // false
     }
 }
 
@@ -27,8 +27,8 @@ void push(struct stack* ptr, int data){
     if(isFull(ptr)){
         printf("Stack underflow\n");
     }else{
-        ptr->top++;
-        ptr->arr[ptr->top] = data;
+        ptr->top++; // increamenting top
+        ptr->arr[ptr->top] = data; // pushing the values
     }
 }
 
@@ -37,8 +37,8 @@ int pop(struct stack* ptr){
         printf("Stack overflow\n");
         return -1;
     }else{
-        int data = ptr->arr[ptr->top];
-        ptr->top--;
+        int data = ptr->arr[ptr->top]; // popping value
+        ptr->top--; // decreamenting top
         return data;
     }
 }
