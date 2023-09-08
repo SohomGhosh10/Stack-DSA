@@ -83,6 +83,6 @@ else{
     printf("The parenthesis is not Matching\n");
 }
 
-printf("%d",strlen(exp));
+printf("%d",strlen(exp)); // length of the exp
 return 0;
 }
