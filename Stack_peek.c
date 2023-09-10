@@ -25,7 +25,7 @@ int isFull(struct stack* ptr){ // for full
 
 void push(struct stack* ptr, int data){
     if(isFull(ptr)){
-        printf("Stack underflow\n");
+        printf("Stack Overflow\n");
     }else{
         ptr->top++; // increamenting top
         ptr->arr[ptr->top] = data; // pushing the values
@@ -34,7 +34,7 @@ void push(struct stack* ptr, int data){
 
 int pop(struct stack* ptr){
     if(isEmpty(ptr)){
-        printf("Stack overflow\n");
+        printf("Stack Undererflow\n");
         return -1;
     }else{
         int data = ptr->arr[ptr->top]; // popping value
