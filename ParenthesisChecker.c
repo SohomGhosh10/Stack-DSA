@@ -25,28 +25,28 @@ int isFull(struct stack * ptr){
     }
 }
 
-void push(struct stack* ptr, char data){
+void push(struct stack* ptr, char data){ // character type data
     if(isFull(ptr)){
-        printf("Stack underflow\n");
+        printf("Stack overflow\n"); // Overflow condition 
     }else{
-        ptr->top++;
-        ptr->arr[ptr->top] = data;
+        ptr->top++; // incrementing top
+        ptr->arr[ptr->top] = data; // pushing data
     }
 }
 
-char pop(struct stack* ptr){
+char pop(struct stack* ptr){ // popping a character
     if(isEmpty(ptr)){
-        printf("Stack overflow\n");
+        printf("Stack underflow\n"); // underflow condition
         return -1;
     }else{
-        char data = ptr->arr[ptr->top];
-        ptr->top--;
+        char data = ptr->arr[ptr->top]; // popping character
+        ptr->top--; // decrementing top
         return data;
     }
 }
 
 
-int parenthesisChecker(char* exp){
+int parenthesisChecker(char* exp){ // character type pointer
     // create and initialize a stack
 
     struct stack * sp;
@@ -55,13 +55,13 @@ int parenthesisChecker(char* exp){
     sp->arr = (char*)malloc(sp->size * sizeof(char));
 
     for(int i = 0;exp[i]!='\0'; i++){
-        if(exp[i] == '('){
-            push(sp,'(');
-        }else if(exp[i] == ')'){
+        if(exp[i] == '('){ 
+            push(sp,'('); // for ( bracket, push in stack
+        }else if(exp[i] == ')'){ // for ) bracket, pop all elements upto ( bracket is found
             if(isEmpty(sp)){
                 return 0;
             }
-            pop(sp);
+            pop(sp); // pop elements
         }
     }
 
@@ -74,7 +74,7 @@ int parenthesisChecker(char* exp){
 
 int main(){
 
-char * exp = "((8)*(9))";
+char * exp = "((8)*(9))"; // character type expression
 
 //check stack is empty or not
 if(parenthesisChecker(exp)){
