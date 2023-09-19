@@ -5,14 +5,15 @@ typedef struct st_array {
     int a[MAX];
     int top;
 }
-
 stack;
 //Prototype Declaration
+
 void push(stack *p, int n);
 void pop(stack *p);
 void display(stack p);
 
 //Main function
+
 int main() {
     int ch,
     val;
@@ -25,17 +26,21 @@ int main() {
         scanf("%d", &ch);
 
         switch(ch) {
-            case 1: printf("\n Enter the value:");
-            scanf("%d", &val);
-            push(&s, val);
+            case 1: 
+                   printf("\n Enter the value:");
+                   scanf("%d", &val);
+                   push(&s, val);
             break;
-            case 2: printf("\n Deleting the top:");
-            pop(&s);
+            case 2:
+                   printf("\n Deleting the top:");
+                   pop(&s);
             break;
-            case 3: printf("\n Display:");
-            display(s);
+            case 3:
+                   printf("\n Display:");
+                   display(s);
             break;
-            case 4: exit(0);
+            case 4:
+                   exit(0);
             default: printf("\n Wrong Input.");
         }
 
