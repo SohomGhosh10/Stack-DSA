@@ -2,7 +2,7 @@
 #define MAX 5 //Structure Declaration
 
 typedef struct st_array {
-    int a[MAX];
+    int a[MAX]; // maximum value 
     int top;
 }
 stack;
