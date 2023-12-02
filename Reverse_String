@@ -1,32 +1,23 @@
 #include <iostream>
 #include <stack>
+using namespace std;
+int main()
+{
+    string str;
+    getline(cin , str);
 
-void reversePrint(const std::string& input) {
-    std::stack<char> charStack;
+    stack<char> s1;
+    stack<char> s2;
 
-    // Push each character onto the stack
-    for (char ch : input) {
-        charStack.push(ch);
+    for(char ch : str)
+        s1.push(ch);
+    
+    while(!s1.empty()){
+        cout << s1.top();
+        s1.pop();
     }
 
-    // Pop and print each character to achieve reverse order
-    std::cout << "Reversed String: ";
-    while (!charStack.empty()) {
-        std::cout << charStack.top();
-        charStack.pop();
-    }
-    std::cout << std::endl;
-}
-
-int main() {
-    std::string inputString;
-
-    // Get input string from the user
-    std::cout << "Enter a string: ";
-    std::getline(std::cin, inputString);
-
-    // Reverse print the string using a stack
-    reversePrint(inputString);
+    cout << endl;
 
     return 0;
 }
