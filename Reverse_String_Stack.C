@@ -37,27 +37,20 @@ char pop(struct Stack* stack) {
     return stack->items[stack->top--];
 }
 
-// Function to reverse a string using two stacks
-void reverseStringWithTwoStacks(char str[]) {
-    // Create two stacks
-    struct Stack stack1, stack2;
-    initialize(&stack1);
-    initialize(&stack2);
+// Function to reverse a string using a stack
+void reverseString(char str[]) {
+    // Create a stack
+    struct Stack stack;
+    initialize(&stack);
 
-    // Push each character onto the first stack
+    // Push each character onto the stack
     for (int i = 0; i < strlen(str); i++) {
-        push(&stack1, str[i]);
+        push(&stack, str[i]);
     }
 
-    // Pop each character from the first stack and push onto the second stack
-    while (!isEmpty(&stack1)) {
-        char item = pop(&stack1);
-        push(&stack2, item);
-    }
-
-    // Pop each character from the second stack to reverse the string
+    // Pop each character from the stack to reverse the string
     for (int i = 0; i < strlen(str); i++) {
-        str[i] = pop(&stack2);
+        str[i] = pop(&stack);
     }
 }
 
@@ -71,8 +64,8 @@ int main() {
     // Remove the newline character from the input
     str[strcspn(str, "\n")] = '\0';
 
-    // Reverse the string using two stacks
-    reverseStringWithTwoStacks(str);
+    // Reverse the string
+    reverseString(str);
 
     // Print the reversed string
     printf("Reversed string: %s\n", str);
