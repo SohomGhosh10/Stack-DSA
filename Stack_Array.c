@@ -87,6 +87,7 @@ void display(stack p) {
     }
 
     else {
-        for(i=p.top; i>=0; i--) printf("%d\t", p.a[i]);
+        for(i=p.top; i>=0; i--) 
+            printf("%d\t", p.a[i]);
     }
 }
