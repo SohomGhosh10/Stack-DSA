@@ -18,6 +18,7 @@ int main()
     {
         s2.push(s1.top());
         s1.pop();
+        cout << s2.top();
     }
 
     while (!s2.empty())
